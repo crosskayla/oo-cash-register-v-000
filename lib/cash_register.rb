@@ -10,12 +10,8 @@ class CashRegister
   end
 
   def add_item(title, price, quantity=1)
-    if self.items
-      quantity.times{|x| self.items << title}
-    else
-      self.items = []
-      quantity.times{|x| self.items << title}
-    end
+    self.items = [] if !self.items
+    quantity.times{|x| self.items << title}
     self.total += price*quantity
   end
 
