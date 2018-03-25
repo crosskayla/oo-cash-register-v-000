@@ -13,7 +13,7 @@ class CashRegister
     if self.items
       self.items << total
     else
-      self.items = [total]
+      self.items = [title]
     end
     self.total += price*quantity
   end
