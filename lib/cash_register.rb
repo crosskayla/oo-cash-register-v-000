@@ -10,7 +10,11 @@ class CashRegister
   end
 
   def add_item(title, price, quantity=1)
-    self.items ? self.items << title : self.items = Array.new(title)
+    if self.items
+      self.items << total
+    else
+      self.items = Array.new(title)
+    end
     self.total += price*quantity
   end
 
