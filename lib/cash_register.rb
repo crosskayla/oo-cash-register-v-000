@@ -2,7 +2,7 @@ require 'pry'
 
 class CashRegister
 
-  attr_accessor :total, :discount, :items
+  attr_accessor :total, :discount, :items, :last_transaction
 
   def initialize(discount=nil)
     self.total = 0
@@ -10,6 +10,7 @@ class CashRegister
   end
 
   def add_item(title, price, quantity=1)
+
     self.items = [] if !self.items
     quantity.times{|x| self.items << title}
     self.total += price*quantity
@@ -22,6 +23,10 @@ class CashRegister
     else
       return "There is no discount to apply."
     end
+  end
+
+  def void_last_transaction
+    
   end
 
 end
