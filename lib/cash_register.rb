@@ -4,7 +4,7 @@ class CashRegister
 
   attr_accessor :total, :discount
 
-  def initialize(discount=0)
+  def initialize(discount=nil)
     self.total = 0
     self.discount = discount
   end
@@ -14,8 +14,11 @@ class CashRegister
   end
 
   def apply_discount
-    self.total *= (1 - @discount/100.0)
-    return "After the discount, the total comes to $#{@total.to_i}."
+    if discount
+      self.total *= (1 - @discount/100.0)
+      return "After the discount, the total comes to $#{@total.to_i}."
+    else
+      
   end
 
 end
