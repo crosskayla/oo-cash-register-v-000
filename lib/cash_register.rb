@@ -13,7 +13,7 @@ class CashRegister
     if self.items
       quantity.times{|x| self.items << title}
     else
-      self.items = [title]
+      self.items = []
     end
     self.total += price*quantity
   end
