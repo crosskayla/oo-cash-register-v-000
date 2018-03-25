@@ -10,9 +10,9 @@ class CashRegister
   end
 
   def add_item(title, price, quantity=1)
-
     self.items = [] if !self.items
     quantity.times{|x| self.items << title}
+    self.last_transaction = price*quantity
     self.total += price*quantity
   end
 
@@ -26,7 +26,7 @@ class CashRegister
   end
 
   def void_last_transaction
-    
+
   end
 
 end
